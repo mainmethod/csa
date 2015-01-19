@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118033606) do
+ActiveRecord::Schema.define(version: 20150119031244) do
+
+  create_table "member_organizations", force: true do |t|
+    t.integer  "member_id"
+    t.integer  "organization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "member_organizations", ["member_id"], name: "index_member_organizations_on_member_id", using: :btree
+  add_index "member_organizations", ["organization_id"], name: "index_member_organizations_on_organization_id", using: :btree
 
   create_table "messages", force: true do |t|
     t.integer  "sender_id"
