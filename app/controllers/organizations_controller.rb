@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  before_action :set_organization, only: [:show, :edit, :update, :destroy]
+  before_action :set_organization, only: [:edit, :update, :destroy]
 
   # GET /organizations
   def index
@@ -8,6 +8,7 @@ class OrganizationsController < ApplicationController
 
   # GET /organizations/1
   def show
+    @organization = Organization.includes([:users]).find(params[:id])
   end
 
   # GET /organizations/new

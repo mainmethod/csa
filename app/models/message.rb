@@ -11,7 +11,7 @@ class Message < ActiveRecord::Base
     read
   end
   
-  def mark_as_read!
+  def mark_as_read
     update_attribute(:read, true) if !read
   end
 end

@@ -37,3 +37,11 @@ message2 = Message.create do |m|
   m.content = "Youre quite welcome!"
   m.parent = message1
 end
+
+message3 = Message.create do |m|
+  m.sender = member
+  m.recipient = farmer
+  m.subject = "Re: Thanks for the box"
+  m.content = "Im glad you responded so quickly"
+  m.parent = message1
+end
