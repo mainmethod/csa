@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   
   get 'login' => 'sessions#new', :as => :login
   match 'logout' => 'sessions#destroy', :as => :logout, via: [:get, :post]
+  
+  get 'signup/:type' => 'sessions#signup', :as => :signup
 end

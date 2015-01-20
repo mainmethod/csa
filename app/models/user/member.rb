@@ -1,5 +1,9 @@
 class Member < User
   
+  def self.model_name
+    User.model_name
+  end
+  
   has_many :member_organizations, :dependent => :destroy
   has_many :organizations, :through => :member_organizations
   has_many :farmerships, :through => :reverse_relationships, :source => :farmer
